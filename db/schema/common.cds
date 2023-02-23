@@ -4,7 +4,7 @@ using {
   temporal,
   managed
 } from '@sap/cds/common';
-//using {opensap.MD} from './masterData';
+using {opensap.MD} from './masterData';
 
 extend sap.common.Currencies with {
   // Currencies.code = ISO 4217 alphabetic three-letter code
@@ -128,7 +128,6 @@ context opensap.common {
   type PhoneNumber : String(30)@title : '{i18n>phoneNumber}'  @assert.format : '((?:\+|00)[17](?: |\-)?|(?:\+|00)[1-9]\d{0,2}(?: |\-)?|(?:\+|00)1\-\d{3}(?: |\-)?)?(0\d|\([0-9]{3}\)|[1-9]{0,3})(?:((?: |\-)[0-9]{2}){4}|((?:[0-9]{2}){4})|((?: |\-)[0-9]{3}(?: |\-)[0-9]{4})|([0-9]{7}))';
 }
 context sap.common_countries {
-
   entity Regions {
     key country     : String(3);
     key sub_code    : String(5);
@@ -137,7 +136,6 @@ context sap.common_countries {
         name        : String(80);
         type        : String(80);
   }
-
   annotate Regions with {
     country  @(
       title        : '{i18n>country}',
@@ -159,7 +157,6 @@ context sap.common_countries {
       Common.Label : '{i18n>type}'
     );
   }
-
 }
 define view iso_countries_regions as
   select from sap.common_countries.Regions {

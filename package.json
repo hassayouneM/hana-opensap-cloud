@@ -43,6 +43,11 @@
         }
       ]
     },
+    "i18n": {
+      "folders": [
+          "_i18n"
+      ]
+  },
     "hana":{
       "deploy-format":"hdbtable"
     },
